@@ -1,0 +1,27 @@
+<div>
+
+    <h1 class="block" >
+      History
+    </h1>
+  
+    <p class="block tooltip" >
+  
+      by Ralph Waldo Emerson 
+      <span class="block tooltiptext">Tooltip text</span>
+  
+    </p>
+  
+    <p class="block" >
+      A <span [@animationTrigger]="manState" >man</span> is the <span [@animationTrigger]="wholeState" >whole</span> encyclopaedia of facts. The creation of a thousand forests <span [@animationTrigger]="isState" >is</span> in one acorn, and Egypt, Greece, Rome, Gaul, Britain, America, lie folded already in the first man. Epoch after epoch, camp, kingdom, empire, republic, democracy, are merely the application of his <span [@animationTrigger]="manifoldState" >manifold</span> spirit to the manifold world.
+    </p>
+  
+    <div class="block rearrangedBox" >
+    </div>
+    <button class="block" (click)="animate()" > Animate <span *ngIf="counter > 0">{{counter}}</span> </button>
+    <button class="block" (click)="animate()" > Click <span *ngIf="counter > 0">{{counter}}</span> </button>
+    <button class="block" (click)="animate()" > Click <span *ngIf="counter > 0">{{counter}}</span> </button>
+  
+  
+  
+  
+  </div>
