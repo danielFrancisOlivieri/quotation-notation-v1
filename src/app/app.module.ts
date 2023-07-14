@@ -9,6 +9,9 @@ import { PeaceComponent } from  './phrases/peace/peace.component';
 import { UnderlineDirective } from './directives/underline/underline.directive';
 import { WholeEncyclopediaComponent } from './phrases/whole-encyclopedia/whole-encyclopedia.component';
 import { ExperimentsComponent } from './phrases/experiments/experiments.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LotteryComponent } from './phrases/lottery/lottery.component';
+import { BolanoSeeingComponent } from './phrases/bolano-seeing/bolano-seeing.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ExperimentsComponent } from './phrases/experiments/experiments.componen
     CitationComponent,
     PeaceComponent,
     WholeEncyclopediaComponent,
-    ExperimentsComponent
+    ExperimentsComponent,
+    HomeComponent,
+    LotteryComponent,
+    BolanoSeeingComponent
   ],
   imports: [
     BrowserModule,

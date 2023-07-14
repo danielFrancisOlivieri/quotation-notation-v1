@@ -1,13 +1,22 @@
 
-<div>
+<div class="block" >
 
-    This is a <span [@animationBinding]="{value: getTriggerValue, params: { emSize: emSize, translateValue: translateValue }}" >test</span>. 
+    Miller owns this field, Locke that, and <span [@animationBinding]="{value: getTriggerValue, params: { emSize: emSize, translateValueX: '40px', translateValueY: translateValueY }}" >Manning</span> the woodland beyond. But none of them owns the landscape. There is a property in the horizon which no man has but he whose eye can integrate all the parts, that is, the poet. This is the best part of these men's farms, yet to this their warranty-deeds give no title.
+
+    <span [@animationBinding]="{value: getTriggerValue, params: { emSize: emSize, translateValueX: translateValueX, translateValueY: translateValueY }}" #test >test</span>. 
 
 </div>
 
-<button class="block" (click)="animateExperiment()" >
+<div class="block experimentSecondBox" #experimentBox >
 
-    animate
 
-</button>
+</div>
+<div class="buttonDiv" >
+    <button class="block round" (click)="animateExperiment()" >
+
+        Animate
+    
+    </button>
+</div>
+
 
