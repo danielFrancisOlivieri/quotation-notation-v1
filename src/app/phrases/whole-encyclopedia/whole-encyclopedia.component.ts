@@ -1,3 +1,4 @@
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {
   animate,
   state,
@@ -5,8 +6,6 @@ import {
   transition,
   trigger
 } from '@angular/animations';
-
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'whole-encyclopedia',
@@ -16,7 +15,7 @@ import { Component } from '@angular/core';
     trigger('animationTrigger', [
       state('man1', style({})),
       state('man2', style({ 
-      transform: 'translateY(230px) translateX(70px) scale(150%)'
+      transform: 'translateY(784%) translateX(70px) scale(150%)'
     })),
       state('is1', style({})),
       state('is2', style({
@@ -40,6 +39,9 @@ import { Component } from '@angular/core';
     ])]
 })
 export class WholeEncyclopediaComponent {
+
+  @ViewChild('box') rearrangedBox!: ElementRef;
+
   manMove = false;
   isMove = false;
   manifoldMove = false;
@@ -63,6 +65,10 @@ export class WholeEncyclopediaComponent {
   }
 
   animate() {
+    console.log(this.rearrangedBox.nativeElement.getBoundingClientRect());
+
+    
+    
     this.moveMan();
     this.moveIs();
     this.moveManifold();

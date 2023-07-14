@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { PeaceComponent } from  './phrases/peace/peace.component';
 import { UnderlineDirective } from './directives/underline/underline.directive';
 import { WholeEncyclopediaComponent } from './phrases/whole-encyclopedia/whole-encyclopedia.component';
+import { ExperimentsComponent } from './phrases/experiments/experiments.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WholeEncyclopediaComponent } from './phrases/whole-encyclopedia/whole-e
     UnderlineDirective,
     CitationComponent,
     PeaceComponent,
-    WholeEncyclopediaComponent
+    WholeEncyclopediaComponent,
+    ExperimentsComponent
   ],
   imports: [
     BrowserModule,

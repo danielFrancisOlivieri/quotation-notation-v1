@@ -11,17 +11,14 @@
   
     </p>
   
-    <p class="block" >
-      A <span [@animationTrigger]="manState" >man</span> is the <span [@animationTrigger]="wholeState" >whole</span> encyclopaedia of facts. The creation of a thousand forests <span [@animationTrigger]="isState" >is</span> in one acorn, and Egypt, Greece, Rome, Gaul, Britain, America, lie folded already in the first man. Epoch after epoch, camp, kingdom, empire, republic, democracy, are merely the application of his <span [@animationTrigger]="manifoldState" >manifold</span> spirit to the manifold world.
-    </p>
+    <div class="block encyclopaediaBlock" >
+      A <span [@animationTrigger]="manState" class="man" >man</span> is the <span [@animationTrigger]="wholeState" >whole</span> encyclopaedia of facts. The creation of a thousand forests <span [@animationTrigger]="isState" >is</span> in one acorn, and Egypt, Greece, Rome, Gaul, Britain, America, lie folded already in the first man. Epoch after epoch, camp, kingdom, empire, republic, democracy, are merely the application of his <span [@animationTrigger]="manifoldState" >manifold</span> spirit to the manifold world.
+    </div>
   
-    <div class="block rearrangedBox" >
+    <div class="block rearrangedBox" #box >
     </div>
     <button class="block" (click)="animate()" > Animate <span *ngIf="counter > 0">{{counter}}</span> </button>
     <button class="block" (click)="animate()" > Click <span *ngIf="counter > 0">{{counter}}</span> </button>
     <button class="block" (click)="animate()" > Click <span *ngIf="counter > 0">{{counter}}</span> </button>
-  
-  
-  
   
   </div>
