@@ -43,7 +43,18 @@ export class PhilosophyDeathComponent implements OnInit {
   fontSize: 6,
   x: 10,
   y: 10
-},
+}, {
+  text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
+  fontSize: 1,
+  x: 10,
+  y: 3
+}, {
+  text: '“Now, of all the benefits that virtue confers upon us, the contempt of death is one of the greatest, as the means that accommodates human life with a soft and easy tranquillity, and gives us a pure and pleasant taste of living, without which all other pleasure would be extinct.”',
+  fontSize: 2,
+  x: 10,
+  y: 3
+}
+
   ]
 
   currentQuote = this.quoteArray[0];
@@ -138,9 +149,10 @@ export class PhilosophyDeathComponent implements OnInit {
   positionText() {
     console.log(this.box.nativeElement.getBoundingClientRect());
     console.log(this.quote.nativeElement.getBoundingClientRect());
-    this.quote.nativeElement.setAttribute('style', `font-size: ${this.currentQuote.fontSize}em`)
     this.quoteCount++;
     this.currentQuote = this.quoteArray[this.quoteCount];
+    this.quote.nativeElement.setAttribute('style', `font-size: ${this.currentQuote.fontSize}em`);
+
   }
 
 }
