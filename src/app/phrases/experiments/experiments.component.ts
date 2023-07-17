@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import {
   animate,
   state,
@@ -27,15 +27,12 @@ import {
     ])
   ]
 })
-export class ExperimentsComponent implements OnInit {
+export class ExperimentsComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
   @ViewChild('experimentBox') experimentBox!: ElementRef;
-  @ViewChild('test') test!:ElementRef;
+  @ViewChild('test') test!: ElementRef;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

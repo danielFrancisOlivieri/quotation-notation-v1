@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) {
 
-    this.routes = router.config;
+    this.routes = router.config.slice(1, router.config.length);
 
    }
 

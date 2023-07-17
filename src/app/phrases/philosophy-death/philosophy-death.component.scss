@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+
+.philosophyDeathBox {
+    height: 90vw;
+    width: 100vw;
+    color: black;
+}
+
+.smaller {
+    height: 30vw;
+    width: 30vw;
+    background-color: white;
+}
+
+.btn-group {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    top: 75%;
+    left: 40vw;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}

@@ -20,11 +20,12 @@ import {
         opacity: 1
       }), 
       {params: {
-        transitionDelay: 2000
+        transitionDelay: 100
       }}
       
       ),
-      transition('invisible => visible', animate(`{{transitionDelay}}ms 2000ms ease-in`)),
+      transition('invisible => visible', animate(`2000ms {{transitionDelay}}ms ease-in`)),
+      transition('visible => invisible', animate(`1000ms {{transitionDelay}}ms ease-in`)),
 
     ])
   ]
@@ -33,15 +34,19 @@ export class BolanoSeeingComponent implements OnInit {
 
   @ViewChild('box') bolanoBox!: ElementRef;
 
-  firstVisible = false; 
-  transitionDelay = 2000;
+  animationBegun = false; 
+  firstTransitionDelay = 2000;
+  secondTransitionDelay = 4000;
+  thirdTransitionDelay = 6000;
+  fourthTransitionDelay = 8000;
+  fifthTransitionDelay = 10000
 
-  toggleFirstVisible () {
-    this.firstVisible = !this.firstVisible;
+  toggleVisible () {
+    this.animationBegun = !this.animationBegun;
   }
 
   get firstVisibleState() {
-    return this.firstVisible ? 'visible' : 'invisible';
+    return this.animationBegun ? 'visible' : 'invisible';
   }
 
   constructor() { }
@@ -50,7 +55,7 @@ export class BolanoSeeingComponent implements OnInit {
   }
 
   begin() {
-    this.toggleFirstVisible();
+    this.toggleVisible();
   }
 
 

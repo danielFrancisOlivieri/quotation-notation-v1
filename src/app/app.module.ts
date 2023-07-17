@@ -12,6 +12,7 @@ import { ExperimentsComponent } from './phrases/experiments/experiments.componen
 import { HomeComponent } from './pages/home/home.component';
 import { LotteryComponent } from './phrases/lottery/lottery.component';
 import { BolanoSeeingComponent } from './phrases/bolano-seeing/bolano-seeing.component';
+import { PhilosophyDeathComponent } from './phrases/philosophy-death/philosophy-death.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BolanoSeeingComponent } from './phrases/bolano-seeing/bolano-seeing.com
     ExperimentsComponent,
     HomeComponent,
     LotteryComponent,
-    BolanoSeeingComponent
+    BolanoSeeingComponent,
+    PhilosophyDeathComponent
   ],
   imports: [
     BrowserModule,

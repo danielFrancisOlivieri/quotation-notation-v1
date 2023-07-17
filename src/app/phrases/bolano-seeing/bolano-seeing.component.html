@@ -2,13 +2,13 @@
 
 <div class="block mainBlock" #bolanoBox >
     <p>
-        <span class="peopleSee" [@animationBinding]="{value: firstVisibleState, params: {transitionDelay: transitionDelay}}"  >People see </span> <span class="whatTheyWant">what they want to see </span> 
-        <span class="andWhatPeople" >and what people want to see</span>
-        <span class="theTruth"> never has anything to do with the truth.</span>
-        <!--  never has anything to do with the truth.  -->
+        <span class="peopleSee" [@animationBinding]="{value: firstVisibleState, params: {transitionDelay: firstTransitionDelay}}"  >People see </span> 
+        <span class="whatTheyWant" [@animationBinding]="{value: firstVisibleState, params: {transitionDelay: secondTransitionDelay}}" >what they want to see </span> 
+        <span class="andWhatPeople" [@animationBinding]="{value: firstVisibleState, params: {transitionDelay: thirdTransitionDelay}}" >and what people want to see</span>
+        <span class="theTruth" [@animationBinding]="{value: firstVisibleState, params: {transitionDelay: fourthTransitionDelay}}"> never has anything to do with the truth.</span>
     </p>
     
-    <p class="bolanoCitation" >- Roberto Bolaño</p>
+    <p class="bolanoCitation" [@animationBinding]="{value: firstVisibleState, params: {transitionDelay: fifthTransitionDelay}}" >- Roberto Bolaño, 2666</p>
     </div>
     
     <button class="block" (click)="begin()" >
