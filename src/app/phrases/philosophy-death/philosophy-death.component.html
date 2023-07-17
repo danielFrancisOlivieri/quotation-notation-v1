@@ -1,13 +1,9 @@
 
-<div class="smaller" #philosophy >
-testing 
 
-
+<div class="philosophyBox" #philosophyBoxId >
+<div class="quote" #quoteId style="font-size: {{currentQuote.fontSize}};" >
+    {{currentQuote.text}}
 </div>
-<div>
-<div class="btn-group" >
-    <button class="btn" > Back </button>
-    <button class="btn" (click)="changeMainCanvasSize(20, 40)" > Forward </button>
 
 </div>
-</div>
+
