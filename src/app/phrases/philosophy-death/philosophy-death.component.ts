@@ -20,27 +20,77 @@ export class PhilosophyDeathComponent implements OnInit {
 
   constructor() { }
 
+  @ViewChild('philosophyBackgroundId') philosophyBackground!: ElementRef;
   @ViewChild('philosophyBoxId') box!: ElementRef;
   @ViewChild('quoteId') quote!: ElementRef;
 
   height = 100;
   width = 100;
-  top = 0;
-  left = 0;
+  top = 1;
+  left = 1;
   quoteCount = 0;
+  padding = 0;
 
   quoteArray = [
     {text: 'To study philosophy is to learn to die.',
-    fontSize: 10,
+    fontSize: 2,
     x: 0,
     y: 20
   },
     {text: 'We die a little bit every day',
-    fontSize: 8,
+    fontSize: 2,
     x: 30,
     y: 20
   }, {text: 'We cannot practice death',
-  fontSize: 6,
+  fontSize: 2,
+  x: 10,
+  y: 10
+}, {
+  text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
+  fontSize: 1,
+  x: 10,
+  y: 3
+}, {
+  text: '“Now, of all the benefits that virtue confers upon us, the contempt of death is one of the greatest, as the means that accommodates human life with a soft and easy tranquillity, and gives us a pure and pleasant taste of living, without which all other pleasure would be extinct.”',
+  fontSize: 2,
+  x: 10,
+  y: 3
+},
+{text: 'To study philosophy is to learn to die.',
+    fontSize: 2,
+    x: 0,
+    y: 20
+  },
+    {text: 'We die a little bit every day',
+    fontSize: 2,
+    x: 30,
+    y: 20
+  }, {text: 'We cannot practice death',
+  fontSize: 2,
+  x: 10,
+  y: 10
+}, {
+  text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
+  fontSize: 1,
+  x: 10,
+  y: 3
+}, {
+  text: '“Now, of all the benefits that virtue confers upon us, the contempt of death is one of the greatest, as the means that accommodates human life with a soft and easy tranquillity, and gives us a pure and pleasant taste of living, without which all other pleasure would be extinct.”',
+  fontSize: 2,
+  x: 10,
+  y: 3
+},
+{text: 'To study philosophy is to learn to die.',
+    fontSize: 2,
+    x: 0,
+    y: 20
+  },
+    {text: 'We die a little bit every day',
+    fontSize: 2,
+    x: 30,
+    y: 20
+  }, {text: 'We cannot practice death',
+  fontSize: 2,
   x: 10,
   y: 10
 }, {
@@ -54,7 +104,6 @@ export class PhilosophyDeathComponent implements OnInit {
   x: 10,
   y: 3
 }
-
   ]
 
   currentQuote = this.quoteArray[0];
@@ -67,13 +116,14 @@ export class PhilosophyDeathComponent implements OnInit {
     console.log($event.key);
     if ($event.key == 'ArrowRight') {
       console.log($event.key);
-      this.advanceTopAndLeft();
       this.advanceHeightAndWidth();
       this.positionText();
       this.changeMainCanvasSize();
+      this.advanceTopAndLeft();
+
     } else if ($event.key == 'ArrowLeft') {
       console.log($event.key);
-      this.retractTopAndLeft();
+      this.retractHeightAndWidth();
       this.retractHeightAndWidth();
       this.changeMainCanvasSize();
     }
@@ -93,6 +143,7 @@ export class PhilosophyDeathComponent implements OnInit {
   }
 
   advanceHeightAndWidth() {
+    console.log('height: ', this.height);
     if (this.height > 30) {
       this.height -= 5;
     } else if (this.height > 10) {
@@ -128,6 +179,9 @@ export class PhilosophyDeathComponent implements OnInit {
     if (this.left < 30) {
       this.left += 5;
     }
+
+    this.padding += 1;
+    this.philosophyBackground.nativeElement.setAttribute('style', `padding: ${this.padding}%`);
   }
 
   retractTopAndLeft() {
@@ -138,6 +192,10 @@ export class PhilosophyDeathComponent implements OnInit {
     if (this.left >= 10) {
       this.left -= 5;
     }
+
+    this.padding -= 1;
+    this.philosophyBackground.nativeElement.setAttribute('style', `padding: ${this.padding}%`);
+
   }
 
   changeMainCanvasSize() {
@@ -149,7 +207,9 @@ export class PhilosophyDeathComponent implements OnInit {
   positionText() {
     console.log(this.box.nativeElement.getBoundingClientRect());
     console.log(this.quote.nativeElement.getBoundingClientRect());
-    this.quoteCount++;
+    if (this.quoteCount <= this.quoteArray.length - 2) {
+      this.quoteCount++;
+    }
     this.currentQuote = this.quoteArray[this.quoteCount];
     this.quote.nativeElement.setAttribute('style', `font-size: ${this.currentQuote.fontSize}em`);
 
