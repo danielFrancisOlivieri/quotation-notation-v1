@@ -1,12 +1,5 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger
-} from '@angular/animations';
-
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'epoch';
+  routerLayout = 'centerLayout';
+  results: any; 
+  constructor(http: HttpClient) {
+    const path = 'https://api.github.com/search/repositories?q=angular';
+    this.results = http.get(path);
+  }
+
+
+
+
+
 }

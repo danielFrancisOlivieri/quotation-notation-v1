@@ -1,0 +1,24 @@
+<ng-content>
+
+</ng-content>
+
+
+<div
+class="grid"
+>
+
+<div
+
+*ngFor="let author of array"
+
+class="cell">
+    <card
+    [name]="author.name"
+    [description]="author.description"
+    ></card>
+
+</div>
+
+
+</div>
+

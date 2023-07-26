@@ -32,22 +32,27 @@ export class PhilosophyDeathComponent implements OnInit {
   padding = 0;
 
   quoteArray = [
-    {text: 'To study philosophy is to learn to die.',
-    fontSize: 2,
+    {text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
+    fontSize: 8,
     x: 0,
     y: 20
   },
-    {text: 'We die a little bit every day',
-    fontSize: 2,
+  {text: 'We cannot practice death',
+  fontSize: 6,
+  x: 10,
+  y: 10
+},
+    {text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
+    fontSize: 8,
     x: 30,
     y: 20
-  }, {text: 'We cannot practice death',
-  fontSize: 2,
+  }, {text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
+  fontSize: 6,
   x: 10,
   y: 10
 }, {
   text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
-  fontSize: 1,
+  fontSize: 6,
   x: 10,
   y: 3
 }, {
@@ -57,53 +62,15 @@ export class PhilosophyDeathComponent implements OnInit {
   y: 3
 },
 {text: 'To study philosophy is to learn to die.',
-    fontSize: 2,
+    fontSize: 5,
     x: 0,
     y: 20
   },
     {text: 'We die a little bit every day',
-    fontSize: 2,
+    fontSize: 5,
     x: 30,
     y: 20
-  }, {text: 'We cannot practice death',
-  fontSize: 2,
-  x: 10,
-  y: 10
-}, {
-  text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
-  fontSize: 1,
-  x: 10,
-  y: 3
-}, {
-  text: '“Now, of all the benefits that virtue confers upon us, the contempt of death is one of the greatest, as the means that accommodates human life with a soft and easy tranquillity, and gives us a pure and pleasant taste of living, without which all other pleasure would be extinct.”',
-  fontSize: 2,
-  x: 10,
-  y: 3
-},
-{text: 'To study philosophy is to learn to die.',
-    fontSize: 2,
-    x: 0,
-    y: 20
-  },
-    {text: 'We die a little bit every day',
-    fontSize: 2,
-    x: 30,
-    y: 20
-  }, {text: 'We cannot practice death',
-  fontSize: 2,
-  x: 10,
-  y: 10
-}, {
-  text: '“To lament that we shall not be alive a hundred years hence, is the same folly as to be sorry we were not alive a hundred years ago.”',
-  fontSize: 1,
-  x: 10,
-  y: 3
-}, {
-  text: '“Now, of all the benefits that virtue confers upon us, the contempt of death is one of the greatest, as the means that accommodates human life with a soft and easy tranquillity, and gives us a pure and pleasant taste of living, without which all other pleasure would be extinct.”',
-  fontSize: 2,
-  x: 10,
-  y: 3
-}
+  }
   ]
 
   currentQuote = this.quoteArray[0];
@@ -113,17 +80,17 @@ export class PhilosophyDeathComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event']) 
   onKeydown($event: KeyboardEvent) {
-    console.log($event.key);
+    console.log(this.quoteCount);
     if ($event.key == 'ArrowRight') {
       console.log($event.key);
       this.advanceHeightAndWidth();
-      this.positionText();
-      this.changeMainCanvasSize();
+      this.positionText(); // need a reversal 
       this.advanceTopAndLeft();
+      this.changeMainCanvasSize();
 
     } else if ($event.key == 'ArrowLeft') {
       console.log($event.key);
-      this.retractHeightAndWidth();
+      this.retractTopAndLeft();
       this.retractHeightAndWidth();
       this.changeMainCanvasSize();
     }
@@ -158,16 +125,16 @@ export class PhilosophyDeathComponent implements OnInit {
   }
 
     retractHeightAndWidth() {
-      if (this.height < 30) {
-        this.height += 5;
-      } else if (this.height < 10) {
+      if (this.height <= 30) {
         this.height += 3;
+      } else if (this.height <= 95) {
+        this.height += 5;
       }
   
-      if (this.width < 30) {
-        this.width += 5;
-      } else if (this.width < 10) {
+      if (this.width <= 30) {
         this.width += 3;
+      } else if (this.width <= 95) {
+        this.width += 5;
       }
 
   }
@@ -180,27 +147,31 @@ export class PhilosophyDeathComponent implements OnInit {
       this.left += 5;
     }
 
-    this.padding += 1;
-    this.philosophyBackground.nativeElement.setAttribute('style', `padding: ${this.padding}%`);
+    if (this.padding < 10) {
+      this.padding += 1;
+      this.philosophyBackground.nativeElement.setAttribute('style', `padding: ${this.padding}%`);
+    }
   }
 
   retractTopAndLeft() {
-    if (this.top >= 10) {
+    if (this.top >= 5) {
       this.top -= 5;
     }
 
-    if (this.left >= 10) {
+    if (this.left >= 5) {
       this.left -= 5;
     }
 
-    this.padding -= 1;
-    this.philosophyBackground.nativeElement.setAttribute('style', `padding: ${this.padding}%`);
+    if (this.padding < 50) {
+      this.padding -= 1;
+      this.philosophyBackground.nativeElement.setAttribute('style', `padding: ${this.padding}%`);
+    }
 
   }
 
   changeMainCanvasSize() {
     console.log(this.box.nativeElement.getBoundingClientRect());
-    this.box.nativeElement.setAttribute(`style`, `top: ${this.top}%; left: ${this.left}%; height: ${this.height}vh; width: ${this.width}vw` );
+    this.box.nativeElement.setAttribute(`style`, `top: ${this.top}%; left: ${this.left}%; height: ${this.height}vh; width: ${this.width}vw;` );
   
   }
 

@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthorGridComponent } from './phrases/author-grid/author-grid.component';
 import { BolanoSeeingComponent } from './phrases/bolano-seeing/bolano-seeing.component';
 import { ExperimentsComponent } from './phrases/experiments/experiments.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -26,6 +27,9 @@ const routes: Routes = [
   }},
   {path: 'death-philosophy', component: PhilosophyDeathComponent, data: {
     title: 'To Study Philosophy is to Learn to Die'
+  }},
+  {path: 'authors', component: AuthorGridComponent, data: {
+    title: ' Authors'
   }}
   
 ];

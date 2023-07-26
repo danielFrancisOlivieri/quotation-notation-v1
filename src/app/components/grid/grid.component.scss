@@ -1,0 +1,14 @@
+.cell {
+    width: 30%;
+    display: inline-block;
+    margin: 5px;
+
+    @media screen {
+        // add a media query here for smaller screen sizes 
+    }
+}
+
+.grid {
+    width: 100%;
+    display: flexbox;
+}
