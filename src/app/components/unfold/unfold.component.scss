@@ -4,6 +4,12 @@
 
 }
 
+.front {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: red;
+    width: 30%;
+}
+
 .behind {
     position: relative;
     left: 0;
@@ -15,8 +21,17 @@
 
 .right {
     left: 15em;
+    background-color: blue;
+
 }
 
-.left {
+.down {
     top: 15em;
+    background-color: green;
+
+}
+
+
+.left {
+    left: -15em;
 }

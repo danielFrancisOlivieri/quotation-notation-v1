@@ -4,7 +4,7 @@ class="aleatory"
 (mouseenter)="moveOnHover()"
 (mouseleave)="returnOnMouseLeave()"
 >
-<p>
+<p class="front" >
     Before
 </p>
 <div
@@ -25,6 +25,22 @@ class="aleatory"
 
 <div
 #left
+[ngClass]="behindDown"
+>
+
+<h1>
+    Bottom 
+</h1>
+
+<p>
+    One two three
+</p>
+
+
+</div>
+
+<div
+#right
 [ngClass]="behindLeft"
 >
 

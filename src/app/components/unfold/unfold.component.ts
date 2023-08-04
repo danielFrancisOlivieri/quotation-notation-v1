@@ -13,16 +13,19 @@ export class UnfoldComponent implements OnInit {
   }
 
   behindRight = "behind";
-  behindLeft = "behind";
+  behindDown = "behind";
+  behindLeft = "behind"
 
   moveOnHover() {
     console.log('move');
     this.behindRight = `behind right`;
-    this.behindLeft = `behind left`;
+    this.behindDown = `behind down`;
+    this.behindLeft = `behind left`
   }
 
   returnOnMouseLeave() {
     this.behindRight = `behind`;
+    this.behindDown = `behind`;
     this.behindLeft = `behind`;
   }
 
