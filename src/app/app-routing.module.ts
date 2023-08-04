@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { PeaceComponent } from './phrases/peace/peace.component';
 import { PhilosophyDeathComponent } from './phrases/philosophy-death/philosophy-death.component';
+import { UnfoldComponent } from './components/unfold/unfold.component';
 import { WholeEncyclopediaComponent } from './phrases/whole-encyclopedia/whole-encyclopedia.component';
 
 const routes: Routes = [
@@ -30,7 +31,12 @@ const routes: Routes = [
   }},
   {path: 'authors', component: AuthorGridComponent, data: {
     title: ' Authors'
-  }}
+  }},
+  {
+    path: 'unfold', component: UnfoldComponent, data: {
+      title: 'Unfold'
+    }
+  }
   
 ];
 

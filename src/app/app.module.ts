@@ -23,6 +23,7 @@ import { TokenInterceptor } from './token.interceptor';
 import { UnderlineDirective } from './directives/underline/underline.directive';
 import { WholeEncyclopediaComponent } from './phrases/whole-encyclopedia/whole-encyclopedia.component';
 import { TransformDirective } from './directives/transform/transform.directive';
+import { UnfoldComponent } from './components/unfold/unfold.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TransformDirective } from './directives/transform/transform.directive';
     AuthorGridComponent,
     FormComponent,
     LogServiceComponent,
-    TransformDirective
+    TransformDirective,
+    UnfoldComponent
   ],
   imports: [
     BrowserModule,

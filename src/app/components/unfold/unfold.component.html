@@ -1,0 +1,25 @@
+<div
+class="aleatory"
+
+(mouseenter)="moveOnHover()"
+(mouseleave)="returnOnMouseLeave()"
+>
+<p>
+    Before
+</p>
+<div
+[ngClass]="behind"
+
+>
+
+<ng-content
+>
+
+</ng-content>
+</div>
+
+<p>
+    After
+</p>
+
+</div>
