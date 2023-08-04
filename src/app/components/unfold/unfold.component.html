@@ -8,14 +8,35 @@ class="aleatory"
     Before
 </p>
 <div
-[ngClass]="behind"
-
+#right
+[ngClass]="behindRight"
 >
 
-<ng-content
+<h1>
+    Right 
+</h1>
+
+<p>
+    One two three
+</p>
+
+
+</div>
+
+<div
+#left
+[ngClass]="behindLeft"
 >
 
-</ng-content>
+<h1>
+    Left 
+</h1>
+
+<p>
+    One two three
+</p>
+
+
 </div>
 
 <p>
@@ -23,3 +44,10 @@ class="aleatory"
 </p>
 
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

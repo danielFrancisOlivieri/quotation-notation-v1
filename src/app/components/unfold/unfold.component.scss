@@ -1,18 +1,22 @@
 .aleatory {
-    background-color: red;
-    width: 15em;
-    height: 15em;
+    // background-color: red;
+    display: grid;
+
 }
 
 .behind {
-    width: 15em;
-    height: 15em;
     position: relative;
     left: 0;
+    top: 0;
     transition: ease 0.75s;
     z-index: -1;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .right {
-    left: 20em;
+    left: 15em;
+}
+
+.left {
+    top: 15em;
 }

@@ -12,15 +12,18 @@ export class UnfoldComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  behind = "behind";
+  behindRight = "behind";
+  behindLeft = "behind";
 
   moveOnHover() {
     console.log('move');
-    this.behind = `behind right`;
+    this.behindRight = `behind right`;
+    this.behindLeft = `behind left`;
   }
 
   returnOnMouseLeave() {
-    this.behind = `behind`;
+    this.behindRight = `behind`;
+    this.behindLeft = `behind`;
   }
 
 }
